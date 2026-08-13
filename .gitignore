@@ -1,0 +1,28 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+
+# Android / Gradle
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+local.properties
+.cxx/
+
+# OS / Temp
+.DS_Store
+Thumbs.db
+*.tmp
+*.log

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AirMic</string>
+    <string name="app_subtitle">Microfono via LAN</string>
+
+    <string name="status_idle">Non connesso</string>
+    <string name="status_searching">Ricerca PC…</string>
+    <string name="status_connected">Connesso a %1$s</string>
+    <string name="status_waiting">In attesa del PC…</string>
+
+    <string name="btn_start">AVVIA</string>
+    <string name="btn_stop">STOP</string>
+    <string name="btn_discover">Ricerca automatica</string>
+    <string name="btn_connect">Connetti</string>
+    <string name="hint_ip">IP del PC (es. 192.168.1.10)</string>
+
+    <string name="section_level">Livello microfono</string>
+    <string name="section_connection">Connessione</string>
+
+    <string name="toast_no_pc_found">Nessun PC trovato. Verifica che l\'app Windows sia avviata.</string>
+    <string name="toast_pc_found">PC trovato: %1$s</string>
+    <string name="toast_manual_fallback">Nessuna risposta dal PC: verrà usata la porta predefinita 47811.</string>
+    <string name="toast_invalid_ip">Indirizzo IP non valido.</string>
+    <string name="toast_mic_denied">Permesso microfono negato: impossibile avviare lo streaming.</string>
+    <string name="toast_mic_error">Impossibile inizializzare il microfono.</string>
+
+    <string name="notif_channel_name">Streaming microfono</string>
+    <string name="notif_text">Streaming verso %1$s</string>
+    <string name="notif_stop">Interrompi</string>
+</resources>

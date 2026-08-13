@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AirMic dark iOS-style palette (brand red from the app icon). -->
+    <color name="bg">#0B0B0D</color>
+    <color name="card">#1C1C1E</color>
+    <color name="card_stroke">#2C2C2E</color>
+    <color name="control_fill">#2C2C2E</color>
+
+    <color name="accent">#C6090D</color>
+    <color name="accent_bright">#E53238</color>
+    <color name="accent_deep">#7A0508</color>
+
+    <color name="text">#FDFDFD</color>
+    <color name="text_dim">#8E8E93</color>
+
+    <color name="status_idle">#636366</color>
+    <color name="status_warn">#FF9F0A</color>
+    <color name="status_ok">#30D158</color>
+</resources>
