@@ -26,21 +26,32 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Determine Version
+        id: ver
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+            $v = "${{ github.event.inputs.version }}".TrimStart('v')
+          } else {
+            $v = "${{ github.ref_name }}".TrimStart('v')
+          }
+          "version=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          "tag=v$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
       - name: Build Releases via PowerShell
         shell: pwsh
         run: |
-          $ver = if ("${{ github.event_name }}" -eq "workflow_dispatch") { "${{ github.event.inputs.version }}" } else { "${{ github.ref_name }}".TrimStart('v') }
-          .\build-release.ps1 -Version $ver
+          .\build-release.ps1 -Version "${{ steps.ver.outputs.version }}"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
         with:
-          tag_name: ${{ github.ref_name || format('v{0}', github.event.inputs.version) }}
-          name: AirMic v${{ github.ref_name && replace(github.ref_name, 'v', '') || github.event.inputs.version }}
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: AirMic v${{ steps.ver.outputs.version }}
           draft: false
           prerelease: false
           generate_release_notes: true
           files: |
             release/*.zip
             release/SHA256SUMS.txt
+
